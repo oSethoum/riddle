@@ -4,11 +4,14 @@ import random
 def main():
     boxes = list(range(0, 100))
     random.shuffle(boxes)
+
+    print("opening boxes randomly")
     for i in range(1000):
         if rand(boxes) == 100:
             print("All safe")
             break
-          
+
+    print("opening boxes with loop method")
     for i in range(1000):
         if loop(boxes) == 100:
             print("All safe")
@@ -41,7 +44,6 @@ def loop(boxes):
             content = boxes[box]
             opened.append(content)
             box = content
-
             if len(opened) == 50:
                 break
         if i in opened:
