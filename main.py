@@ -3,19 +3,22 @@ import random
 
 def main():
     boxes = list(range(0, 100))
-    random.shuffle(boxes)
 
+    safes = 0
     print("opening boxes randomly")
     for i in range(1000):
+        random.shuffle(boxes)
         if rand(boxes) == 100:
-            print("All safe")
-            break
+            safes += 1
+    print("safes", safes)
 
     print("opening boxes with loop method")
+    safes = 0
     for i in range(1000):
+        random.shuffle(boxes)
         if loop(boxes) == 100:
-            print("All safe")
-            break
+            safes += 1
+    print("safes", safes)
 
 
 def rand(boxes):
